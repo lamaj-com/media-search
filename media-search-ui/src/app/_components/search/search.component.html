@@ -1,0 +1,25 @@
+<div id="search">
+<div class="search-bar">
+    <mat-toolbar id="search-bar-toolbar">
+        <mat-toolbar-row class="search-bar-toolbar-row">
+            <h2>Search Media App</h2>
+            <span flex></span>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="search-bar-toolbar-row">
+            <mat-form-field id="search-bar-form-field">
+                <input id="search-bar-input" (keyup.enter)="search(searchTerm.value)" matInput #searchTerm>
+            </mat-form-field>
+            <!-- Search button (initiates search) -->
+            <button mat-icon-button id="search-bar-button" (click)="search(searchTerm.value)">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+<div id="search-results-container">
+<mat-list id="search-results-list">
+    <mat-list-item id="search-results-list-item" *ngFor="let media of mediaRecords">{{media.title}} : {{media.authors}} : {{media.mediaType}}
+    </mat-list-item>
+</mat-list>
+</div>
+</div>
