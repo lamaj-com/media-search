@@ -36,10 +36,10 @@ Functionalities Media Search API provides are:
 # Installation
 
 ## Prerequisites 
-JDK 1.8
-Maven 3.3
-Node 12 
-npm 6
+- JDK 1.8
+- Maven 3.3
+- Node 12 
+- npm 6
 
 **Please note**: Node and npm will be installed automatically during the execution of `mvn clean install` command. 
 
@@ -53,41 +53,48 @@ This command will run tests along with the build. To omit test use the following
 `mvn clean install -DskipTests`
 
 ## Build artifact
-`media-search-api-${project.version}.jar`
+Build artifact is to be found in the target directory of media-search-api module with the following name pattern:
 
-Build artifact is to be found in the target directory of media-search-api module.
+`media-search-api-${project.version}.jar`
 
 ## Environment variables
 The following environment variable should be set:
 JAVA_HOME=path/to/jdk
 
 ## Running
-To run the application, run the following command in a terminal window of the target directory:
+To run the application, run the following command in a terminal window of the target directory of media-search-api module:
 
 `java -jar  media-search-api-${project.version}.jar`
 
-or if you use Maven, run the following command:
+or using Maven command:
 `./mvnw spring-boot:run`
 
 # Deployment 
 
 ## Home page
+Once the application is up, navigate to the home page:
 
 `http://[hostname]:8080/index.html`
 
 ## Health page
 Health status of the whole application could be found at:
+
 `http://[hostname]:8080/actuator/health`
+
 Health status of upstream services could be found at:
+
 `http://[hostname]:8080/actuator/health/clients`
 
 ## Swagger UI
 Media Search API documentation could be found at:
+
 `http://[hostname]:8080/swagger-ui/`
 
 ## Metrics
 Endpoint statistics for all classes annotated with @RestController in Media Search application could be found at:
+
 `http://[hostname]:8080/actuator/metrics/http.client.requests`
+
 Endpoint statistics for upstream services could be found at:
 
 iTunes Search API:
